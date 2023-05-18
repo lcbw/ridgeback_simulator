@@ -1,12 +1,20 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.5.0)
 project(ridgeback_gazebo)
 
-find_package(catkin REQUIRED COMPONENTS roslaunch)
+################################################################################
+# Find ament packages and libraries for ament and system dependencies
+################################################################################
+find_package(ament_cmake REQUIRED)
 
-catkin_package()
-
-roslaunch_add_file_check(launch/ridgeback_world.launch)
-
-install(DIRECTORY launch Media worlds
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+################################################################################
+# Install
+################################################################################
+install(
+  DIRECTORY launch worlds
+  DESTINATION share/${PROJECT_NAME}
 )
+
+################################################################################
+# Macro for ament package
+################################################################################
+ament_package()

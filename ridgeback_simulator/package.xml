@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<package>
+<package format="3">
   <name>ridgeback_simulator</name>
   <version>0.2.0</version>
   <description>Packages for simulating Ridgeback.</description>
@@ -11,8 +11,12 @@
 
   <url type="website">http://wiki.ros.org/ridgeback_simulator</url>
 
-  <buildtool_depend>catkin</buildtool_depend>
-  <run_depend>ridgeback_gazebo</run_depend>
+  <buildtool_depend>ament_cmake</buildtool_depend>
 
-  <export><metapackage/></export>
+  <exec_depend>ridgeback_gazebo</exec_depend>
+  <exec_depend>velodyne_simulator</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
 </package>

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<package>
+<package format="3">
   <name>ridgeback_gazebo</name>
   <version>0.2.0</version>
   <description>Launchfiles to use Ridgeback in Gazebo.</description>
@@ -11,17 +11,15 @@
 
   <url type="website">http://wiki.ros.org/ridgeback_gazebo</url>
 
-  <buildtool_depend>catkin</buildtool_depend>
-  <build_depend>roslaunch</build_depend>
-  <run_depend>gazebo_ros</run_depend>
-  <run_depend>gazebo_ros_control</run_depend>
-  <run_depend>gazebo_plugins</run_depend>
-  <run_depend>hector_gazebo_plugins</run_depend>
-  <run_depend>ridgeback_gazebo_plugins</run_depend>
-  <run_depend>ridgeback_control</run_depend>
-  <run_depend version_gte="0.1.6" >ridgeback_description</run_depend>
+<!--  <run_depend>ridgeback_gazebo_plugins</run_depend>-->
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <exec_depend>ridgeback_control</exec_depend>
+  <exec_depend>ridgeback_description</exec_depend>
+  <exec_depend>gazebo_ros_pkgs</exec_depend>
+  <exec_depend>gazebo_ros2_control</exec_depend>
 
   <export>
-    <gazebo_ros gazebo_media_path="${prefix}"/>
+    <!-- <gazebo_ros gazebo_media_path="${prefix}"/> -->
+    <build_type>ament_cmake</build_type>
   </export>
 </package>
