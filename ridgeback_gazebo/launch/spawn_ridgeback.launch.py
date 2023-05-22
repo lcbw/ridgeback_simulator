@@ -107,7 +107,9 @@ def generate_launch_description():
         period=20.0,
         actions=[
             IncludeLaunchDescription(
-                PythonLaunchDescriptionSource(ridgeback_controls_path)
+                PythonLaunchDescriptionSource(ridgeback_controls_path),
+                launch_arguments={'physical_robot': 'false',
+                                  'control_yaml_file': rewritten_control_yaml}.items()
             )
         ]
     )
